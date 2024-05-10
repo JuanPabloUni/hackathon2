@@ -13,6 +13,7 @@ import { Payment } from './payments/payments.entity';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DriversTripsModule } from './drivers-trips/drivers-trips.module';
+import { RidersTripsModule } from './riders-trips/riders-trips.module';
 
 @Module({
   imports: [RidersModule, DriversModule, TripsModule, PaymentsModule,
@@ -28,6 +29,7 @@ import { DriversTripsModule } from './drivers-trips/drivers-trips.module';
       keepConnectionAlive: true,
     }),
     DriversTripsModule,
+    RidersTripsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
