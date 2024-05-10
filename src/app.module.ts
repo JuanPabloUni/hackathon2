@@ -14,6 +14,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DriversTripsModule } from './drivers-trips/drivers-trips.module';
 import { RidersTripsModule } from './riders-trips/riders-trips.module';
+import { PaymentsTripsModule } from './payments-trips/payments-trips.module';
 
 @Module({
   imports: [RidersModule, DriversModule, TripsModule, PaymentsModule,
@@ -30,6 +31,7 @@ import { RidersTripsModule } from './riders-trips/riders-trips.module';
     }),
     DriversTripsModule,
     RidersTripsModule,
+    PaymentsTripsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

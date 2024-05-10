@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from 'typeorm';
+import { Trip } from '../trips/trips.entity';
 
 @Entity()
 export class Payment {
@@ -8,12 +9,13 @@ export class Payment {
   id: number;
 
   @Column()
-  riderId: number;
-
-  @Column()
-  tripId: number;
-
-  @Column()
   amount: number;
+
+  @Column()
+  paymentDate: Date;
+
+  @OneToOne(() => Trip)
+  @JoinColumn()
+  trip: Trip;
 
 }
